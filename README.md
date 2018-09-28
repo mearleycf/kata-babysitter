@@ -45,13 +45,15 @@ I want to calculate my nightly charge<br>*
 
 
 ### An Object
+```
 class WorkShift {
     start_time: number = parseInt((<HTMLInputElement>document.getElementById("startTime")).value, 10);
     //parseInt assumes base 16, 8, or 10 depending on first characters of input parameter; specifying base 10 to ensure input is always calculated as base 10
     //I chose parseInt over parseFloat because I want a whole number (no fractional hours)
 
-    start_time: number = parseInt((<HTMLInputElement>document.getElementById("hoursWorked")).value, 10);
-    hours_worked: number = 
+    hours_worked: number = parseInt((<HTMLInputElement>document.getElementById("hoursWorked")).value, 10);
 }
-
-todayHours = new WorkShift 
+```
+```
+todayHours = new WorkShift(start_time, hours_worked);
+```
